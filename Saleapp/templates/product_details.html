@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quan Ly San Pham</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}"
+ rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+               <li>{{ product.name }}</li>
+                        <li>{{ product.description }}</li>
+                        <li>{{ product.price }}</li>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>

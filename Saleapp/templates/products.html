@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quan Ly San Pham</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}"
+ rel="stylesheet" />
+</head>
+<body>
+    <h1> Chao Mung Den Trang WEb</h1>
+    <ul>
+        <li><a> href="{{ url_for('product_list') }}"TAt CA</a></li>
+        {% for cat in categories %}
+        <li><a> href='#' {{ cat.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Image</th>
+        </tr>
+        {% for p in products %}
+            <tr>
+                <td>
+                    <img src="{{ url_for( 'static', filename=p.image)"
+                          alt="{{ p.name }}" width="120" }}/>
+                </td>
+                <td>{{ p.id }}</td>
+                <td>{{ p.name }}</td>
+                <td>{{ "{:,.1f}".format(p.price) }} VND</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

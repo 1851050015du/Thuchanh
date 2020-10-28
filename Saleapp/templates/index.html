@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quan Ly San Pham</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}"
+ rel="stylesheet" />
+</head>
+<body>
+    <h1> Chao Mung Den Trang WEb</h1>
+    <ul>
+        <li><a> href="{{ url_for('product_list') }}"TAt CA</a></li>
+        {% for cat in categories %}
+        <li><a> href='#' {{ cat.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
